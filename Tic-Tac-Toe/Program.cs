@@ -35,14 +35,19 @@ void TakeUserInput()
         
         if (int.TryParse(Console.ReadLine(), out playerInput))
         {
-            if (playerInput > 0 && playerInput < 10)
+            if ((playerInput > 0 && playerInput < 10) && game.IsLocationEmpty(playerInput-1))
                 inputTaken = true;
             else
             {
-                Console.WriteLine("Error! Number must be between 0 and 9. Press any key.");
+                Console.WriteLine("Error! Number must be between 0 and 9. Space must be empty. Press any key.");
                 Console.ReadKey();
             }                
-        }        
+        }
+        else
+        {
+            Console.WriteLine("Error! Number must be between 0 and 9. Press any key.");
+            Console.ReadKey();
+        }
     }
 
 }

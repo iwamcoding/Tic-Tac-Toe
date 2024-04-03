@@ -51,7 +51,7 @@ namespace Game
             return filled;
         }
 
-        private bool IsLocationEmpty(int index)
+        public bool IsLocationEmpty(int index)
         {
             if (locations[index] == '_' || locations[index] == ' ')
                 return true;
